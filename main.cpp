@@ -1,17 +1,15 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include <sqlite3.h>
-#include <iomanip> // Для форматирования колонок (setw)
+#include <iomanip>
 
 using namespace std;
 
-// Функция очистки экрана
 void clearScreen() {
 #ifdef _WIN32
-    system("cls");   // Для Windows
+    system("cls");
 #else
-    system("clear"); // Для Linux/Mac
+    system("clear");
 #endif
 }
 
@@ -24,7 +22,7 @@ void executeSQL(sqlite3* db, const string& sql) {
     }
 }
 
-// Красивый вывод списка продуктов
+// Списка товаров
 void showProducts(sqlite3* db) {
     clearScreen();
     sqlite3_stmt* stmt;
@@ -36,7 +34,6 @@ void showProducts(sqlite3* db) {
     }
 
     cout << "==================== СПИСОК ТОВАРОВ ====================" << endl;
-    // Устанавливаем ширину колонок: ID(4), Название(20), Цена(10), Склад(8)
     cout << left << setw(4) << "ID"
          << setw(20) << "Название"
          << setw(10) << "Цена (руб)"
@@ -56,6 +53,7 @@ void showProducts(sqlite3* db) {
     cin.get();
 }
 
+// Добавление товара
 void addProduct(sqlite3* db) {
     clearScreen();
     string name;
@@ -74,6 +72,7 @@ void addProduct(sqlite3* db) {
     cin.get();
 }
 
+// Удаление товара
 void deleteProduct(sqlite3* db) {
     clearScreen();
     int id;
@@ -86,7 +85,6 @@ void deleteProduct(sqlite3* db) {
     }
 
     cout << "==================== СПИСОК ТОВАРОВ ====================" << endl;
-    // Устанавливаем ширину колонок: ID(4), Название(20), Цена(10), Склад(8)
     cout << left << setw(4) << "ID"
          << setw(20) << "Название"
          << setw(10) << "Цена (руб)"
