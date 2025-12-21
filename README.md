@@ -15,6 +15,4 @@ gcc -c sqlite3.c -o sqlite3.o
 
 g++ main.cpp sqlite3.o -lpthread -ldl -o shop
 ```
-
-![[Снимок экрана от 2025-12-20 13-50-57.png]]
-![[Снимок экрана от 2025-12-20 13-51-36.png]]
+![[s1.png]]![[s2.png]]
