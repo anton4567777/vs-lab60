@@ -15,4 +15,5 @@ gcc -c sqlite3.c -o sqlite3.o
 
 g++ main.cpp sqlite3.o -lpthread -ldl -o shop
 ```
-![[s1.png]]![[s2.png]]
+![[s1.png]]
+![[s2.png]]
